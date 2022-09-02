@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/widgets/catlog.dart';
 import 'dart:ui';
 
 import 'package:helloworld/widgets/drawer.dart';
+import 'package:helloworld/widgets/showitems.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -13,8 +15,14 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text("This is my $days App With using import"),
-        ),
+            child: ListView.builder(
+          itemCount: CatelogModel.products.length,
+          itemBuilder: (context, index) {
+            return ShowItemStyle(
+              item: CatelogModel.products[index],
+            );
+          },
+        )),
       ),
       drawer: MyDrawer(),
     );
