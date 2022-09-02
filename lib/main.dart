@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/utils/myroutes.dart';
+import 'package:helloworld/widgets/themes.dart';
 import 'screens/home.dart';
 import 'screens/login.dart';
 import 'dart:ui';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: MyTheme.lightTheme(),
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
