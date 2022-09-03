@@ -8,6 +8,7 @@ import 'package:helloworld/widgets/showitems.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final listdemo = List.generate(30, (index) => CatelogModel.products[0]);
     var days = "fifth";
     return Scaffold(
       appBar: AppBar(
@@ -16,10 +17,10 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Container(
             child: ListView.builder(
-          itemCount: CatelogModel.products.length,
+          itemCount: listdemo.length,
           itemBuilder: (context, index) {
             return ShowItemStyle(
-              item: CatelogModel.products[index],
+              item: listdemo[index],q
             );
           },
         )),
