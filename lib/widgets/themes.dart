@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
+  static ThemeData theme = lightTheme();
+
   static ThemeData lightTheme() {
     return ThemeData(
         primarySwatch: Colors.red,
@@ -14,5 +16,10 @@ class MyTheme {
   static ThemeData darkTheme() {
     return ThemeData(
         brightness: Brightness.dark, appBarTheme: AppBarTheme(elevation: 0.0));
+  }
+
+  static void selectedTheme(ThemeData theme) {
+    MyTheme.theme = theme;
+    print(theme);
   }
 }

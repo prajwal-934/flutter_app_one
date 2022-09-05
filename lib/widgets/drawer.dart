@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:helloworld/widgets/themes.dart';
 
 class MyDrawer extends StatelessWidget {
   String imageUrl = "https://data.whicdn.com/images/197666763/original.jpg";
@@ -40,6 +41,26 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(Icons.mail, color: Colors.white),
               title: Text(
                 "Submit Feedback",
+                style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                MyTheme.selectedTheme(MyTheme.lightTheme());
+              },
+              leading: Icon(Icons.sunny, color: Colors.white),
+              title: Text(
+                "Light Theme",
+                style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                MyTheme.selectedTheme(MyTheme.darkTheme());
+              },
+              leading: Icon(Icons.nightlight, color: Colors.white),
+              title: Text(
+                "Dark Theme",
                 style: TextStyle(color: Colors.white, fontSize: 15),
               ),
             )
