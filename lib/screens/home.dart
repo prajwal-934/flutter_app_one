@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:helloworld/screens/Products.dart';
 import 'package:helloworld/widgets/catlog.dart';
 import 'package:helloworld/widgets/catlog.dart';
 import 'dart:ui';
@@ -49,8 +50,19 @@ class _HomePageState extends State<HomePage> {
                 : ListView.builder(
                     itemCount: CatelogModel.products?.length,
                     itemBuilder: (context, index) {
-                      return ShowItemStyle(
-                        item: CatelogModel.products![index],
+                      final Item selectedItems = CatelogModel.products![index];
+                      return InkWell(
+                        onTap: () {
+                          print(selectedItems.name);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) =>
+                                      Products(catelog: selectedItems))));
+                        },
+                        child: ShowItemStyle(
+                          item: selectedItems,
+                        ),
                       );
                     },
                   )),

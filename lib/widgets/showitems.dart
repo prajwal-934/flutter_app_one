@@ -13,14 +13,12 @@ class ShowItemStyle extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: Card(
         child: ListTile(
-          onTap: () {
-            Navigator.pushNamed(context, MyRoutes.loginRoute);
-            print("buttontapped");
-          },
-          leading: Image.network(item.image),
-          title: Text(item.name),
-          subtitle: Text(item.desc),
-        ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            onTap: () {},
+            leading: Image.network(item.image),
+            title: Text(item.name),
+            subtitle: Text(item.desc),
+            trailing: Icon(Icons.add)),
       ),
     );
   }
