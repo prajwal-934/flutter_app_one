@@ -15,13 +15,37 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Scaffold(
-          body: Text(catelog!.desc),
-        ),
-        Text(catelog!.name)
-      ],
+    return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Text("\$${catelog!.price.toString()}"),
+          ElevatedButton(onPressed: () {}, child: Text("Buy Now"))
+        ]),
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      body: SafeArea(
+        child: Column(children: [
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SizedBox(
+              child: Image.network(catelog!.image),
+              height: 250,
+              width: 300,
+            ),
+          ),
+          Text(
+            catelog!.name,
+            style: const TextStyle(fontSize: 25),
+          ),
+          Text(
+            catelog!.desc,
+            style: const TextStyle(fontSize: 18),
+          ),
+        ]),
+      ),
     );
   }
 }

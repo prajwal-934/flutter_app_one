@@ -14,7 +14,6 @@ class ShowItemStyle extends StatelessWidget {
       child: Card(
         child: ListTile(
             contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            onTap: () {},
             leading: Image.network(item.image),
             title: Text(item.name),
             subtitle: Text(item.desc),
