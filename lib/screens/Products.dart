@@ -31,7 +31,8 @@ class Products extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: SizedBox(
-              child: Image.network(catelog!.image),
+              child:
+                  Hero(tag: catelog!.id, child: Image.network(catelog!.image)),
               height: 250,
               width: 300,
             ),
